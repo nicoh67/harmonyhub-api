@@ -51,7 +51,7 @@ declare class HarmonyHub extends EventEmitter {
      *
      * @param activityId The ID of the activity
      */
-    startActivity(activityId: string): void;
+    startActivity(activityId: string): Promise<any>;
     /**
      * Load and store the current configuration of the hub
      *

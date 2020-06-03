@@ -125,8 +125,8 @@ class HarmonyHub extends EventEmitter {
      * 
      * @param activityId The ID of the activity
      */
-    public startActivity(activityId: string): void {
-        this.sendRequest('vnd.logitech.harmony/vnd.logitech.harmony.engine?startactivity', {
+    public startActivity(activityId: string): Promise<any> {
+        return this.sendRequestAndWaitResponse('vnd.logitech.harmony/vnd.logitech.harmony.engine?startactivity', {
             timestamp: new Date().getTime(),
             activityId: activityId
         });
